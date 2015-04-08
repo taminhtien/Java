@@ -32,11 +32,13 @@ public class Cylinder extends Circle {
 	public double getVolume() {
 		return super.getArea() * height;
 	}
-
+	
+	@Override
 	public double getArea() {
 		return 2 * Math.PI * height + 2 * Math.PI * super.getRadius();
 	}
 
+	@Override
 	public String toString() {
 		return "Cylinder: subclass of "
 				+ super.toString() // use Circle's toString()
