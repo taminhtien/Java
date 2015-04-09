@@ -26,18 +26,15 @@ public class AbstractCircle extends AbstractShape {
 	}
 	
 	@Override
-	double getArea() {
+	public double getArea() {
 		return Math.PI * radius * radius;
 	}
 
 	@Override
-	double getPerimeter() {
+	public double getPerimeter() {
 		return 2 * Math.PI * radius;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		return "AbstractCircle [radius=" + radius + "] " + super.toString();

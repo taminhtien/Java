@@ -1,5 +1,7 @@
 package com.tientm.abstractclass;
 
+import java.awt.HeadlessException;
+
 public class AbstractRectangle extends AbstractShape {
 
 	protected double width;
@@ -14,16 +16,44 @@ public class AbstractRectangle extends AbstractShape {
 		this.width = width;
 		this.length = length;
 	}
-	@Override
-	double getArea() {
-		// TODO Auto-generated method stub
-		return 0;
+	
+	public AbstractRectangle(double width, double length, String color, boolean filled) {
+		this.width = width;
+		this.length = length;
+		this.color = color;
+		this.filled = filled;
+	}
+	
+	public double getWidth() {
+		return width;
+	}
+
+	public void setWidth(double width) {
+		this.width = width;
+	}
+
+	public double getLength() {
+		return length;
+	}
+
+	public void setLength(double length) {
+		this.length = length;
 	}
 
 	@Override
-	double getPerimeter() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double getArea() {
+		return width * length;
 	}
 
+	@Override
+	public double getPerimeter() {
+		return 2 * (width + length);
+	}
+
+	@Override
+	public String toString() {
+		return "AbstractRectangle [width=" + width + ", length=" + length + "]";
+	}
+
+	
 }
