@@ -1,18 +1,18 @@
 package com.tientm.abstractclass;
 
-public class AbstractCircle extends AbstractShape {
+public class Circle2 extends Shape2 {
 
 	protected double radius;
 
-	public AbstractCircle() {
+	public Circle2() {
 		radius = 1;
 	}
 
-	public AbstractCircle(double radius) {
+	public Circle2(double radius) {
 		this.radius = radius;
 	}
 
-	public AbstractCircle(double radius, String color, boolean filled) {
+	public Circle2(double radius, String color, boolean filled) {
 		super(color, filled);
 		this.radius = radius;
 	}

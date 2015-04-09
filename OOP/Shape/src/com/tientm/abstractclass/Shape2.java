@@ -1,15 +1,15 @@
 package com.tientm.abstractclass;
 
-public abstract class AbstractShape {
+public abstract class Shape2 {
 	protected String color;
 	protected boolean filled;
 
-	public AbstractShape() {
+	public Shape2() {
 		color = "RED";
 		filled = true;
 	}
 	
-	public AbstractShape(String color, boolean filled) {
+	public Shape2(String color, boolean filled) {
 		this.color = color;
 		this.filled = filled;
 	}
@@ -30,9 +30,8 @@ public abstract class AbstractShape {
 	}
 	
 	public abstract double getArea();
-	public abstract double getPerimeter();
+	abstract public double getPerimeter();
 
-	@Override
 	public String toString() {
 		return "AbstractShape [color=" + color + ", filled=" + filled + "]";
 	}

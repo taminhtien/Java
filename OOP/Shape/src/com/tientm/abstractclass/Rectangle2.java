@@ -1,23 +1,26 @@
 package com.tientm.abstractclass;
 
-import java.awt.HeadlessException;
 
-public class AbstractRectangle extends AbstractShape {
+public class Rectangle2 extends Shape2 {
 
 	protected double width;
 	protected double length;
 	
-	public AbstractRectangle() {
+	public Rectangle2() {
+		color = "BLUE";
+		filled = false;
 		width = 1;
 		length = 2;
 	}
 	
-	public AbstractRectangle(double width, double length) {
+	public Rectangle2(double width, double length) {
+		color = "BLUE";
+		filled = false;
 		this.width = width;
 		this.length = length;
 	}
 	
-	public AbstractRectangle(double width, double length, String color, boolean filled) {
+	public Rectangle2(double width, double length, String color, boolean filled) {
 		this.width = width;
 		this.length = length;
 		this.color = color;
@@ -52,7 +55,7 @@ public class AbstractRectangle extends AbstractShape {
 
 	@Override
 	public String toString() {
-		return "AbstractRectangle [width=" + width + ", length=" + length + "]";
+		return "AbstractRectangle [width=" + width + ", length=" + length + "] " + super.toString();
 	}
 
 	
