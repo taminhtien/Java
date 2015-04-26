@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                           "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
 	<session-factory>
 		<!-- Database connection settings -->
 		<property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
 		<property name="connection.url">jdbc:hsqldb:hsql://localhost:9001/</property>
-		<property name="connection.username">SA</property>
+		<property name="connection.username">sa</property>
 		<property name="connection.password"></property>
 
 		<!-- SQL dialect -->
@@ -21,9 +22,9 @@
 		<!-- Echo all executed SQL to stdout -->
 		<property name="show_sql">true</property>
 
-		<mapping class="con.tientm.entities.Department" />
-		<mapping class="con.tientm.entities.Employee" />
-		<mapping class="con.tientm.entities.SalaryGrade" />
-		<mapping class="con.tientm.entities.TimeKeeper" />
+		<mapping class="com.tientm.hibernate.entities.Department" />
+		<mapping class="com.tientm.hibernate.entities.Employee" />
+		<mapping class="com.tientm.hibernate.entities.SalaryGrade" />
+		<mapping class="com.tientm.hibernate.entities.Timekeeper" />
 	</session-factory>
 </hibernate-configuration>
