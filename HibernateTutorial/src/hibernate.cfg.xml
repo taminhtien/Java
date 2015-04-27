@@ -1,25 +1,57 @@
+<!-- - The start line of the standard XML files, version = '1 .0 'indicates 
+	that the XML version, encoding =' utf-8 'indicates that the encoding of the 
+	XML file --> 
 <?xml version='1.0' encoding='utf-8'?>
+
+<!-- - Indicating that the parsing of the XML document DTD document, DTD 
+	Document Type Definition is the abbreviation for the document type definition, 
+	XML parser to check the legitimacy of the XML file using the DTD document. 
+	the hibernate.sourceforge.net/hibernate-configuration-3.0dtd can in Hibernate3.1.3 
+	package of src \ org \ hibernate directory locate the file --> 
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
                            "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
+<!-- - The statement Hibernate configuration file Start -->
 <hibernate-configuration>
+
+	<!-- The following configuration for the session-factory configured Hibernate 
+		SessionFactory is in a class, this class is primarily responsible for keeping 
+		the Hibernate configuration information, as well as the operation of Session -->
 	<session-factory>
+
 		<!-- Database connection settings -->
+
+		<!-- The driver of the configuration database, Hibernate when connecting 
+			to the database, you need to use the database driver -->
 		<property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+
+		<!-- Set the database connection url: jdbc:hsqldb:hsql://localhost:9001/, 
+			where localhost HSQL server name, where native Hibernate database name -->
 		<property name="connection.url">jdbc:hsqldb:hsql://localhost:9001/</property>
+
+		<!-- Connect to the database user name -->
 		<property name="connection.username">sa</property>
+
+		<!-- Connect to the database password -->
 		<property name="connection.password"></property>
 
 		<!-- SQL dialect -->
+		<!-- Hibernate dialect just Hibernate database dialect, is to use the Hibernate 
+			database server connection type -->
 		<property name="dialect">org.hibernate.dialect.HSQLDialect</property>
 
 		<!-- Enable Hibernate's automatic session context management -->
 		<property name="current_session_context_class">thread</property>
 
 		<!-- JDBC connection pool (use the build-in) -->
+		<!-- The size of the database connection pool -->
 		<property name="connection.pool_size">2</property>
 
 		<!-- Echo all executed SQL to stdout -->
+		<!-- Whether in the background, use the Hibernate SQL statement, the development 
+			is set to true, ease of error, the program is running in the Eclipse console 
+			shows the Hibernate implementation of SQL statement. After the deployment 
+			of the project can be set to false, improve operational efficiency -->
 		<property name="show_sql">true</property>
 
 		<mapping class="com.tientm.hibernate.entities.Department" />
