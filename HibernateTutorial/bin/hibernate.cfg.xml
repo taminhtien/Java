@@ -1,6 +1,3 @@
-<!-- - The start line of the standard XML files, version = '1 .0 'indicates 
-	that the XML version, encoding =' utf-8 'indicates that the encoding of the 
-	XML file --> 
 <?xml version='1.0' encoding='utf-8'?>
 
 <!-- - Indicating that the parsing of the XML document DTD document, DTD 
