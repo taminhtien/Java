@@ -37,8 +37,22 @@ public class QueryObjectDemo2 {
 				System.out.println("Emp: " + employee.getEmpNO() + " : "
 						+ employee.getEmpName());
 			}
-			
+
 			// Commit dữ liệu
+			// session.getTransaction().commit();
+			// session.getTransaction().begin(); // Không được đóng session, nếu
+			// không sẽ không truy vấn tiếp được
+
+			String sql2 = "Select e from " + Employee.class.getName() + " e "
+					+ " where e.empId=:empId ";
+			query = session.createQuery(sql2);
+			query.setParameter("empId", ((Number) 7369).longValue());
+			employees = query.list();
+
+			for (Employee employee : employees) {
+				System.out.println("Emp: " + employee.getEmpNO() + " : "
+						+ employee.getEmpName());
+			}
 			session.getTransaction().commit();
 
 		} catch (Exception e) {
