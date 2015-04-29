@@ -17,7 +17,7 @@ public class QuerySomeColumnDemo {
 			// Query một vài cột
 			// Việc lấy dữ liệu trong trường hợp này sẽ phức tạp hơn
 			String sql = "Select e.empId, e.empNO, e.empName from "
-					+ Employee.class.getName() + " e ";
+					+ Employee.class.getName() + " e";
 			Query query = session.createQuery(sql);
 			
 			// Thực hiện truy vấn
