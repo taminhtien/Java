@@ -26,8 +26,8 @@ public class UniqueResultDemo {
 				System.out.println("Emp Name: " + emp.getEmpName());
 			}
 
-			Employee emp = getEmployee(session, 7839L);
-			System.out.println("Emp Name: " + emp.getEmpName());
+			//Employee emp = getEmployee(session, 7839L);
+			//System.out.println("Emp Name: " + emp.getEmpName());
 			session.getTransaction().commit();
 
 		} catch (Exception e) {
