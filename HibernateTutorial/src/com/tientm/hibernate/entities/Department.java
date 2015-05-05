@@ -17,7 +17,21 @@ import javax.persistence.UniqueConstraint;
  * @author tientm
  *
  */
+
+// Phần tử (element) name của @Entity là không bắt buộc.
+// Entity khớp với một bảng lấy theo tên theo thứ tự ưu tiên:
+// 1 - name trong @Table
+// 2 - name trong @Entity
+// 3 - name của class.
+// @Entity chú thích một class là một Entity.
+// Việc chỉ định rõ name của @Entity cho phép viết ngắn câu HSQL
 @Entity
+// @Table cho phép chú thích tên bảng
+// Các giàng buộc duy nhất trong bảng.
+// Phần tử name không bắt buộc.
+// Nếu bạn không chỉ rõ tên bảng trong phần tử name ...
+// .. Hibernate sẽ dựa vào phần tử name của @Entity sau đó mới
+// tới tên của class.
 @Table(name = "DEPARTMENT", uniqueConstraints = { @UniqueConstraint(columnNames = { "DEPT_NO" }) })
 public class Department {
 	private Integer deptId;
@@ -38,7 +52,9 @@ public class Department {
 	}
 
 	@Id
+	// Khóa chính của bảng
 	@Column(name = "DEPT_ID")
+	// Tên cột trong bảng
 	public Integer getDeptId() {
 		return deptId;
 	}
@@ -64,6 +80,7 @@ public class Department {
 	public void setDeptNo(String deptNo) {
 		this.deptNo = deptNo;
 	}
+
 	@Column(name = "LOCATION")
 	public String getLocation() {
 		return location;
@@ -73,6 +90,10 @@ public class Department {
 		this.location = location;
 	}
 
+	// Một department có nhiều employee -> quan hệ 1 - N
+	// -> OneToMany
+	// 1 object department sẽ có một set các Employee
+	// -> nó sẽ qua class Employee tìm những employee có cùng "department"
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "department")
 	public Set<Employee> getEmployees() {
 		return employees;
