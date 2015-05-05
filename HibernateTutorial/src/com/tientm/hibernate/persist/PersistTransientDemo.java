@@ -14,7 +14,7 @@ import com.tientm.hibernate.query.HibernateUtils;
 public class PersistTransientDemo {
 	private static DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
-	private static Timekeeper persist2Transient(Session session, Employee emp) {
+	private static Timekeeper persistTransient(Session session, Employee emp) {
 		// Hãy chú ý:
 		// timekeeperId cấu hình tự động được tạo ra bởi UUID.
 		// @GeneratedValue(generator = "uuid")
@@ -61,7 +61,7 @@ public class PersistTransientDemo {
 			session.getTransaction().begin();
 			emp = DataUtils.findEmployee(session, "E7499");
 			// Thêm vào bảng TimeKeeper thời gian hoạt động của emp
-			persist2Transient(session, emp);
+			persistTransient(session, emp);
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
