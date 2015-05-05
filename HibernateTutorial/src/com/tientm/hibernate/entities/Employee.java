@@ -1,5 +1,6 @@
 package com.tientm.hibernate.entities;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -103,6 +104,16 @@ public class Employee {
 
 	@Column(name = "HIRE_DATE", nullable = false)
 	@Temporal(TemporalType.DATE)
+	// @Temporal sử dụng chú thích cho cột có kiểu dữ liệu ngày tháng.
+	// Có 3 giá trị cho TemporalType:
+	// 1 - TemporalType.DATE
+	// 2 - TemporalType.TIME
+	// 3 - TemporalType.TIMESTAMP
+	// TemporalType.DATE chú thích cột sẽ lưu trữ ngày tháng năm (bỏ đi thời
+	// gian)
+	// TemporalType.TIME chú thích cột sẽ lưu trữ thời gian (Giờ phút giây)
+	// TemporalType.TIMESTAMP chú thích cột sẽ lưu trữ ngày tháng và cả thời
+	// gian
 	public Date getHideDate() {
 		return hideDate;
 	}
@@ -147,5 +158,4 @@ public class Employee {
 	public void setEmployees(Set<Employee> employees) {
 		this.employees = employees;
 	}
-
 }
