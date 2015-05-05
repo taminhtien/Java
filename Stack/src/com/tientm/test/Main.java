@@ -5,7 +5,7 @@ import com.tientm.model.MyStack;
 public class Main {
 	public static void main(String[] args) {
 		MyStack ms = new MyStack();
-		String s1 = "Ta Minh Tien";
+		String s1 = "Linux branch";
 		String s2 = "Vo Chi Thong";
 		String s3 = "Le Minh Phu";
 		ms.pop();
