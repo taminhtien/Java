@@ -9,6 +9,9 @@ import org.hibernate.SessionFactory;
 import com.tientm.hibernate.entities.Employee;
 
 public class QueryObjectDemo {
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		SessionFactory factory = HibernateUtils.getSessionFactory();
 		Session session = factory.getCurrentSession();
@@ -32,7 +35,7 @@ public class QueryObjectDemo {
 			List<Employee> employees  = query.list();
 			
 			for (Employee emp : employees) {
-				System.out.println("Emp: " + emp.getEmpNO() + " : " + emp.getEmpName());
+				System.out.println("Emp: " + emp.getEmpNO() + " : " + emp.getEmpName() + " : " + emp.getSalary());
 			}
 			
 			// Commit dữ liệu
