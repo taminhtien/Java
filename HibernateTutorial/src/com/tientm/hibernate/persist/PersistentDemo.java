@@ -6,6 +6,8 @@ import org.hibernate.SessionFactory;
 import com.tientm.hibernate.entities.Department;
 import com.tientm.hibernate.query.HibernateUtils;
 
+// Insert Persistent Data
+
 public class PersistentDemo {
 	public static void main(String[] args) {
 		SessionFactory factory = HibernateUtils.getSessionFactory();
