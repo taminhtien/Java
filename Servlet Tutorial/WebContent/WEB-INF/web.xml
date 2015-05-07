@@ -16,17 +16,35 @@
 			<param-value>Guest</param-value>
 		</init-param>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>DoLoginServlet</servlet-name>
 		<url-pattern>/doLogin</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet-mapping>
 		<servlet-name>HelloServlet</servlet-name>
 		<url-pattern>/hello</url-pattern>
 	</servlet-mapping>
+
+	<!-- /*@WebFilter(filterName = "LoginFilter", urlPatterns = { "/info/*", 
+		"/somepath/abc/*" }) */ -->
 	
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>com.tientm.tutorial.servletfilter.LoginFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/info/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/somepath/abc/*</url-pattern>
+	</filter-mapping>
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>

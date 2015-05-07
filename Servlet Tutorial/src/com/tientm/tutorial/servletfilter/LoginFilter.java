@@ -16,8 +16,9 @@ import javax.servlet.http.HttpSession;
 
 import com.tientm.tutorial.beans.UserInfo;
 
-@WebFilter(filterName = "LoginFilter", urlPatterns = { "/info/*",
+/*@WebFilter(filterName = "LoginFilter", urlPatterns = { "/info/*",
 		"/somepath/abc/*" })
+*/
 public class LoginFilter implements Filter {
 
 	public LoginFilter() {
