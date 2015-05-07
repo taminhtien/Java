@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.tientm.tutorial.beans.UserInfo;
 
 // Kiểm tra đăng nhập hợp lệ không
-@WebServlet("/doLogin")
+//@WebServlet("/doLogin")
 public class DoLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

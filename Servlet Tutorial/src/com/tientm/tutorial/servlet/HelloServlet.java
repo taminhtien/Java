@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class HelloServlet
  */
-@WebServlet(urlPatterns = { "/Hello" }, initParams = { @WebInitParam(name = "name", value = "Guest") })
+//@WebServlet(urlPatterns = { "/Hello" }, initParams = { @WebInitParam(name = "name", value = "Guest") })
 public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -23,7 +23,11 @@ public class HelloServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		// Để lấy giá trị từ initParams, ta dùng this.getInitParameter
+		// Lấy giá trị từ queryString, dùng request.getParameter
 		String name = this.getInitParameter("name");
+		//String name = (String) request.getParameter("name");
+		System.out.println(name);
 		ServletOutputStream out = response.getOutputStream();
 		out.print("<html>");
 		out.print("<head><title>Hello Servlet</title></head>");
