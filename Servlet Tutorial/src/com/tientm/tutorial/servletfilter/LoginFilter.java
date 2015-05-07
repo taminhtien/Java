@@ -41,11 +41,12 @@ public class LoginFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
 
+		System.out.println("- Filter");
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
 
 		String servletPath = req.getServletPath();
-		System.err.println("- Servlet Path: " + servletPath);
+		System.out.println("- Servlet Path: " + servletPath);
 
 		HttpSession session = req.getSession();
 
@@ -55,6 +56,7 @@ public class LoginFilter implements Filter {
 		// Nếu chưa từng đăng nhập hoặc đăng nhập không thành công
 		// userInfo sẽ null
 		if (userInfo == null) {
+			System.out.println("userInfo = null");
 			// Nếu hiện tại không phải là trang /loginForm và /doLogin
 			// thì chuyển đến trang /loginForm
 			// Tránh lặp vô tận
@@ -64,7 +66,7 @@ public class LoginFilter implements Filter {
 				// để lưu trữ lại để sau khi login thành công sẽ tự chuyển lại
 				// trang này
 				String callbackURL = this.getFullRequestURL(req);
-				System.err.println("- callbackURL: " + callbackURL);
+				System.out.println("- callbackURL: " + callbackURL);
 
 				// Lưu vào request
 				// Dữ liệu này chỉ tồn tại trong trang chuyển tiếp
@@ -74,12 +76,15 @@ public class LoginFilter implements Filter {
 				// Sử dụng RequestDispatcher để chuyển tiếp
 				// tới LoginFormServlet
 				// Đồng thời truyền các thông tin trong attribute sang trang mới
-				RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher("/loginForm");
+				RequestDispatcher dispatcher = req.getServletContext()
+						.getRequestDispatcher("/loginForm");
 				dispatcher.forward(req, res);
+				System.out.println("- forward to /loginForm");
 				return;
 			}
 		}
 		// Nếu người dùng đăng nhập rồi, gọi Filter mặc định
+		System.out.println("userInfo != null");
 		chain.doFilter(request, response);
 	}
 

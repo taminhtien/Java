@@ -25,10 +25,12 @@ public class LoginFormServlet extends HttpServlet {
 
 		// Lấy thông tin trang callback được gửi từ Filter, hoặc nơi khác
 		String callbackURL = (String) request.getAttribute("callbackURL");
-
+		System.err.println("- callbackURL: " + callbackURL);
+		
 		// contextPath luôn luôn là "" hoặc "/contextPath"
 		// vd: "/ServletTutorial/doLogin"
 		String actionPath = request.getContextPath() + "/doLogin";
+		System.err.println("- actionPath: " + actionPath);
 
 		out.println("<html>");
 		out.println("<head><title>Login Form</title></head>");
