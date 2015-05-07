@@ -15,5 +15,15 @@
 	<h2>
 		Now is
 		<%=date.toString()%>
+	</h2>
+	<%
+		// Ví dụ sử dụng biến out.
+		out.println("<h1>Now is " + new Date() + "</h1>");
+		// Ví dụ sử dụng biến request
+		String serverName = request.getServerName();
+		out.println(serverName);
+		// Ví dụ sử dụng biến response
+		response.sendRedirect("http://eclipse.org");
+	%>
 </body>
 </html>
