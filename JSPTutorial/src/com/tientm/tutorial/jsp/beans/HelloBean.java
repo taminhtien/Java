@@ -16,10 +16,12 @@ public class HelloBean {
 		this.name = name;
 	}
 	
-	public String getHello2() {
+	public String getHello() {
 		if (name == null) {
 			return "Hello everybody";
 		}
 		return "Hello " + name;
 	}
+	
+	
 }

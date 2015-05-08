@@ -9,6 +9,8 @@
 <body>
 	<jsp:useBean id="helloBean" class="com.tientm.tutorial.jsp.beans.HelloBean"></jsp:useBean>
 	<h3>Say Hello: </h3>
+	
+	<!-- Dựa vào property gọi hàm "get + property" bên Java Bean -->
 	<jsp:getProperty property="hello" name="helloBean"/>
 	
 	<!-- Set property name for helloBean -->
